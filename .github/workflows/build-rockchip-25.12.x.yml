@@ -176,8 +176,8 @@ jobs:
           include_docker="${{ github.event.inputs.include_docker }}"
           rootfs_partsize="${{ github.event.inputs.rootfs_partsize }}"
           case "$rootfs_partsize" in
-            1G)
-              ROOTFS_SIZE=1024
+           10G)
+              ROOTFS_SIZE=10260
               ;;
             2G)
               ROOTFS_SIZE=2048
@@ -187,9 +187,6 @@ jobs:
               ;;
             4G)
               ROOTFS_SIZE=4096
-           10G)
-              ROOTFS_SIZE=10260
-              ;;
           esac
           echo "ROOTFS_SIZE=$ROOTFS_SIZE" >> $GITHUB_ENV
           luci_version="${{ github.event.inputs.luci_version }}"
